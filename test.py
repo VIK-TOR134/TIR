@@ -19,7 +19,7 @@ circle_center_x = SKREEN_WIDTH // 2
 circle_center_y = SKREEN_HEIGHT // 2
 radius = 200
 angle = 0
-speed = 0.00096  # Скорость движения по кругу
+speed = 0.0027595 # Скорость движения по кругу
 
 color = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
 running = True  # исправил опечатку в слове "running" от "runing"
@@ -45,6 +45,7 @@ while running:
             if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_y + target_height:
                 hits += 1  # Увеличиваем счетчик попаданий
                 angle = 0  # Сброс угла на начальную позицию
+                color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     # Обновление позиции цели для движения по круговой траектории
     target_x = int(circle_center_x + radius * math.cos(angle))
@@ -53,6 +54,7 @@ while running:
 
     if angle >= 2 * math.pi:
         angle = 0  # Сброс угла, чтобы избежать увеличения до бесконечности
+
 
     SKREEN.blit(target_image, (target_x, target_y))
 

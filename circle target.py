@@ -35,6 +35,7 @@ while running:
 
             if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_y + target_height:
                 angle = 0  # Сброс угла на начальную позицию
+                color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     # Обновление позиции цели для движения по круговой траектории
     target_x = int(circle_center_x + radius * math.cos(angle))
